@@ -6,207 +6,72 @@
 <title>HEIWEI｜Yboutique團結案報告 05/06–05/09</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink: #1a1410;
-  --paper: #f5f0e8;
-  --warm-mid: #e8e0d0;
-  --accent: #c94f2a;
-  --accent-light: #f2d4ca;
-  --teal: #2a7c6f;
-  --teal-light: #d0ece8;
-  --gold: #b5872a;
-  --rule: #c8bfad;
-  --muted: #7a7060;
-  --mono: 'DM Mono', monospace;
-  --serif: 'Noto Serif TC', serif;
-  --sans: 'Noto Sans TC', sans-serif;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  min-height: 100vh;
-  -webkit-text-size-adjust: 100%;
-}
-
-/* ── HEADER ── */
-.masthead {
-  border-bottom: 2px solid var(--ink);
-  padding: 1.5rem 1.25rem 1.1rem;
-  position: relative;
-  overflow: hidden;
-}
-.masthead::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: repeating-linear-gradient(90deg, var(--accent) 0, var(--accent) 18px, transparent 18px, transparent 22px);
-}
-.masthead-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.8rem;
-  flex-wrap: wrap;
-  gap: 2px;
-}
-.brand { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-.report-date { font-family: var(--mono); font-size: 10px; color: var(--muted); text-align: right; }
-.masthead-title {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 6.5vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 0.35rem;
-}
-.masthead-title span { color: var(--accent); }
-.masthead-sub { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
-
-/* ── LAYOUT ── */
-.body-wrap { padding: 1.1rem 1rem 3rem; max-width: 1100px; margin: 0 auto; }
-
-/* ── SECTION ── */
-.section { margin-bottom: 1.75rem; }
-.section-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border-top: 1px solid var(--rule);
-  padding-top: 0.55rem;
-  margin-bottom: 0.9rem;
-}
-
-/* ── KPI GRID — always 2×2 on mobile, 4×1 on desktop ── */
-.kpi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1.5px solid var(--ink);
-  margin-bottom: 1.75rem;
-}
-.kpi-item {
-  padding: 0.9rem 0.9rem;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.kpi-item:nth-child(2n) { border-right: none; }
-.kpi-item:nth-child(3), .kpi-item:nth-child(4) { border-bottom: none; }
-.kpi-label { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
-.kpi-val {
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 5vw, 1.9rem);
-  font-weight: 700;
-  line-height: 1.1;
-}
-.kpi-val.accent { color: var(--accent); }
-.kpi-val.teal   { color: var(--teal); }
-.kpi-val.gold   { color: var(--gold); }
-.kpi-sub { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 0.2rem; line-height: 1.4; }
-
-/* ── TWO COL — stacks on mobile ── */
-.two-col { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-@media (min-width: 600px) { .two-col { grid-template-columns: 1fr 1fr; } }
-
-/* ── CHART CARD ── */
-.chart-card { background: #fff; border: 1px solid var(--rule); padding: 0.9rem 0.9rem; }
-.card-title { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.7rem; text-transform: uppercase; }
-.chart-wrap { position: relative; height: 190px; }
-
-/* ── TABLES ── */
-.data-table { width: 100%; border-collapse: collapse; }
-.data-table th {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: left;
-  padding: 5px 7px;
-  border-bottom: 1px solid var(--ink);
-}
-.data-table td { padding: 6px 7px; border-bottom: 1px solid var(--warm-mid); font-size: 12px; }
-.data-table tr:last-child td { border-bottom: none; }
-.data-table .tot td { background: var(--warm-mid); font-weight: 600; border-top: 1px solid var(--rule); }
-.nr { text-align: right; font-family: var(--mono); font-size: 11px; }
-
-/* ── BAR ROW ── */
-.bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.bar-label { font-size: 12px; width: 68px; flex-shrink: 0; color: var(--ink); }
-.bar-track { flex: 1; background: var(--warm-mid); border-radius: 2px; height: 7px; overflow: hidden; }
-.bar-fill { height: 7px; border-radius: 2px; }
-.bar-num { font-family: var(--mono); font-size: 10px; color: var(--muted); width: 82px; text-align: right; flex-shrink: 0; }
-
-/* ── BOTTLE STATS ── */
-.bottle-block { padding: 1.1rem 1rem; border: 1.5px solid var(--ink); position: relative; margin-top: 0.4rem; }
-.bottle-block::after {
-  content: attr(data-label);
-  position: absolute;
-  top: -10px; left: 12px;
-  background: var(--paper);
-  padding: 0 6px;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.bottle-count {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 9vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.bottle-unit { font-size: 14px; font-weight: 400; color: var(--muted); }
-.bottle-detail { margin-top: 0.7rem; }
-.bottle-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--warm-mid); }
-.bottle-row:last-child { border-bottom: none; }
-.bottle-row .eq { color: var(--muted); font-family: var(--mono); font-size: 11px; }
-
-/* ── INSIGHT BOX ── */
-.insight-box { background: var(--ink); color: var(--paper); padding: 1.1rem 1.1rem; margin-top: 1.5rem; }
-.insight-box h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; margin-bottom: 0.7rem; color: #fff; }
-.insight-list { list-style: none; }
-.insight-list li {
-  font-size: 13px;
-  padding: 5px 0 5px 1.3em;
-  position: relative;
-  color: #d8d0c4;
-  line-height: 1.65;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.insight-list li:last-child { border-bottom: none; }
-.insight-list li::before { content: '→'; position: absolute; left: 0; top: 6px; color: var(--accent); font-size: 11px; }
-
-/* ── FOOTER ── */
-.footer {
-  border-top: 1px solid var(--rule);
-  padding: 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-}
-
-/* ── DESKTOP OVERRIDES ── */
-@media (min-width: 768px) {
-  .masthead { padding: 2.5rem 3rem 1.5rem; }
-  .body-wrap { padding: 2rem 3rem 4rem; }
-  .kpi-grid { grid-template-columns: repeat(4, 1fr); }
-  .kpi-item { border-bottom: none !important; }
-  .kpi-item:nth-child(odd) { border-right: 1px solid var(--rule) !important; }
-  .kpi-item:nth-child(4) { border-right: none !important; }
-  .footer { flex-direction: row; justify-content: space-between; padding: 1.25rem 3rem; }
+:root{--ink:#1a1410;--paper:#f5f0e8;--warm-mid:#e8e0d0;--accent:#b5452a;--accent-light:#f5ddd8;--teal:#2a7c6f;--teal-light:#d0ece8;--gold:#b5872a;--gold-light:#f5eacc;--blue:#3266ad;--blue-light:#e3eef9;--rule:#c8bfad;--muted:#7a7060;--mono:'DM Mono',monospace;--serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-text-size-adjust:100%}
+.masthead{border-bottom:2px solid var(--ink);padding:1.5rem 1.25rem 1.1rem;position:relative;overflow:hidden}
+.masthead::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 14px,var(--accent) 14px,var(--accent) 28px,var(--teal) 28px,var(--teal) 42px,transparent 42px,transparent 46px)}
+.masthead-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;flex-wrap:wrap;gap:2px}
+.brand{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.report-date{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right}
+.masthead-badge{display:inline-block;background:var(--blue);color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.12em;padding:2px 10px;border-radius:2px;margin-bottom:.5rem}
+.masthead-title{font-family:var(--serif);font-size:clamp(1.5rem,6.5vw,2.6rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:.35rem}
+.masthead-title span{color:var(--blue)}
+.masthead-sub{font-size:12px;color:var(--muted);letter-spacing:.05em}
+.body-wrap{padding:1.1rem 1rem 3rem;max-width:1100px;margin:0 auto}
+.section{margin-bottom:1.75rem}
+.section-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--rule);padding-top:.55rem;margin-bottom:.9rem}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--ink);margin-bottom:1.75rem}
+.kpi-item{padding:.9rem 1rem;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.kpi-item:nth-child(2n){border-right:none}
+.kpi-item:nth-child(3),.kpi-item:nth-child(4){border-bottom:none}
+.kpi-label{font-size:11px;color:var(--muted);letter-spacing:.05em;margin-bottom:.25rem}
+.kpi-val{font-family:var(--serif);font-size:clamp(1.2rem,5vw,1.9rem);font-weight:700;line-height:1.1}
+.kpi-val.blue{color:var(--blue)}.kpi-val.teal{color:var(--teal)}.kpi-val.gold{color:var(--gold)}.kpi-val.accent{color:var(--accent)}
+.kpi-sub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:.2rem;line-height:1.4}
+.two-col{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:600px){.two-col{grid-template-columns:1fr 1fr}}
+.chart-card{background:#fff;border:1px solid var(--rule);padding:.9rem 1rem}
+.card-title{font-size:11px;font-weight:500;letter-spacing:.07em;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase}
+.chart-wrap{position:relative;height:190px}
+.data-table{width:100%;border-collapse:collapse}
+.data-table th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:5px 7px;border-bottom:1px solid var(--ink)}
+.data-table td{padding:6px 7px;border-bottom:1px solid var(--warm-mid);font-size:12px}
+.data-table tr:last-child td{border-bottom:none}
+.data-table .tot td{background:var(--warm-mid);font-weight:600;border-top:1px solid var(--rule)}
+.nr{text-align:right;font-family:var(--mono);font-size:11px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-label{font-size:11px;width:68px;flex-shrink:0;color:var(--ink);line-height:1.3}
+.bar-track{flex:1;background:var(--warm-mid);border-radius:2px;height:7px;overflow:hidden}
+.bar-fill{height:7px;border-radius:2px}
+.bar-num{font-family:var(--mono);font-size:10px;color:var(--muted);width:82px;text-align:right;flex-shrink:0}
+.bottle-block{padding:1.1rem 1rem;border:1.5px solid var(--ink);position:relative;margin-top:.4rem}
+.bottle-block::after{content:attr(data-label);position:absolute;top:-10px;left:12px;background:var(--paper);padding:0 6px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bottle-count{font-family:var(--serif);font-size:clamp(2rem,9vw,3.5rem);font-weight:700;line-height:1;margin-bottom:4px}
+.bottle-unit{font-size:14px;font-weight:400;color:var(--muted)}
+.bottle-detail{margin-top:.7rem}
+.bottle-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid var(--warm-mid)}
+.bottle-row:last-child{border-bottom:none}
+.bottle-row .eq{color:var(--muted);font-family:var(--mono);font-size:11px}
+.cancel-box{background:var(--accent-light);border:1px solid #ddb8ae;padding:.9rem 1rem;margin-bottom:1.25rem}
+.cancel-title{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.cancel-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid rgba(181,69,42,.15)}
+.cancel-row:last-child{border-bottom:none}
+.insight-box{background:var(--ink);color:var(--paper);padding:1.1rem 1.1rem;margin-top:1.5rem}
+.insight-box h3{font-family:var(--serif);font-size:1rem;font-weight:600;margin-bottom:.7rem;color:#fff}
+.insight-list{list-style:none}
+.insight-list li{font-size:13px;padding:5px 0 5px 1.3em;position:relative;color:#d8d0c4;line-height:1.65;border-bottom:1px solid rgba(255,255,255,.07)}
+.insight-list li:last-child{border-bottom:none}
+.insight-list li::before{content:'→';position:absolute;left:0;top:6px;color:var(--blue);font-size:11px}
+.footer{border-top:1px solid var(--rule);padding:1rem 1rem;display:flex;flex-direction:column;gap:3px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em}
+@media(min-width:768px){
+  .masthead{padding:2.5rem 3rem 1.5rem}
+  .body-wrap{padding:2rem 3rem 4rem}
+  .kpi-grid{grid-template-columns:repeat(4,1fr)}
+  .kpi-item{border-bottom:none!important}
+  .kpi-item:nth-child(odd){border-right:1px solid var(--rule)!important}
+  .kpi-item:nth-child(4){border-right:none!important}
+  .footer{flex-direction:row;justify-content:space-between;padding:1.25rem 3rem}
 }
 </style>
 </head>
@@ -215,73 +80,80 @@ body {
 <div class="masthead">
   <div class="masthead-top">
     <div class="brand">HEIWEI · Yboutique</div>
-    <div class="report-date">結案：2026/05/11<br>開團：05/06—05/09</div>
+    <div class="report-date">結案日期：2026/05/28<br>開團：05/06—05/09</div>
   </div>
-  <div class="masthead-title">Yboutique <span>05/04–05/10</span><br>團購活動結案報告</div>
+  <div class="masthead-badge">🧴 爆白防護系列</div>
+  <div class="masthead-title">Yboutique 05/04–05/10<br><span>團購活動結案報告</span></div>
   <div class="masthead-sub">爆白防護隔離噴霧 ＋ 活氧B群保濕噴霧</div>
 </div>
 
 <div class="body-wrap">
 
-  <!-- KPI -->
   <div class="section-label">核心指標總覽</div>
   <div class="kpi-grid">
     <div class="kpi-item">
       <div class="kpi-label">成立訂單</div>
       <div class="kpi-val">577</div>
-      <div class="kpi-sub">取消 22 筆不計</div>
+      <div class="kpi-sub">取消 23 筆不計</div>
     </div>
     <div class="kpi-item">
       <div class="kpi-label">成立總銷售額</div>
-      <div class="kpi-val accent">$946,094</div>
-      <div class="kpi-sub">取消 $44,967 不計</div>
+      <div class="kpi-val blue">$948,194</div>
+      <div class="kpi-sub">取消訂單不計入</div>
     </div>
     <div class="kpi-item">
-      <div class="kpi-label">預估分潤（30%）</div>
-      <div class="kpi-val teal">$283,521</div>
-      <div class="kpi-sub">已付款訂單 $147k+</div>
+      <div class="kpi-label">付款率</div>
+      <div class="kpi-val teal">94.8%</div>
+      <div class="kpi-sub">已付款 547 筆／未付款 29 筆</div>
     </div>
     <div class="kpi-item">
       <div class="kpi-label">平均客單價</div>
-      <div class="kpi-val gold">$1,640</div>
+      <div class="kpi-val gold">$1,643</div>
       <div class="kpi-sub">最高 $5,940</div>
     </div>
   </div>
 
+  <!-- 取消訂單 -->
+  <div class="cancel-box">
+    <div class="cancel-title">⚠️ 取消訂單（23 筆 / $45,966）</div>
+    <div class="cancel-row"><span>備貨中取消</span><span style="font-family:var(--mono);font-size:11px">22 筆｜尚未出貨即取消</span></div>
+    <div class="cancel-row"><span>已退回取消</span><span style="font-family:var(--mono);font-size:11px">1 筆｜商品已退回</span></div>
+  </div>
+
   <!-- 每日趨勢 -->
   <div class="section">
-    <div class="section-label">每日訂單趨勢</div>
+    <div class="section-label">每日訂單趨勢（成立）</div>
     <div class="two-col">
       <div class="chart-card">
         <div class="card-title">每日訂單數 &amp; 銷售額</div>
-        <table class="data-table" style="margin-bottom:0.7rem;">
-          <thead><tr><th>日期</th><th class="nr">訂單</th><th class="nr">銷售額</th><th class="nr">分潤</th></tr></thead>
+        <table class="data-table" style="margin-bottom:.7rem">
+          <thead><tr><th>日期</th><th class="nr">訂單</th><th class="nr">銷售額</th><th class="nr">分潤(30%)</th></tr></thead>
           <tbody>
-            <tr><td>05/06 首日</td><td class="nr">305</td><td class="nr">$499,934</td><td class="nr">$149,854</td></tr>
+            <tr><td>05/06 首日</td><td class="nr">306</td><td class="nr">$503,033</td><td class="nr">$150,784</td></tr>
             <tr><td>05/07</td><td class="nr">128</td><td class="nr">$227,963</td><td class="nr">$68,335</td></tr>
-            <tr><td>05/08</td><td class="nr">80</td><td class="nr">$116,230</td><td class="nr">$34,803</td></tr>
-            <tr><td>05/09 末日</td><td class="nr">64</td><td class="nr">$101,967</td><td class="nr">$30,529</td></tr>
-            <tr class="tot"><td>合計</td><td class="nr">577</td><td class="nr">$946,094</td><td class="nr">$283,521</td></tr>
+            <tr><td>05/08</td><td class="nr">79</td><td class="nr">$115,231</td><td class="nr">$34,503</td></tr>
+            <tr><td>05/09</td><td class="nr">64</td><td class="nr">$101,967</td><td class="nr">$30,529</td></tr>
+            <tr class="tot"><td>合計</td><td class="nr">577</td><td class="nr">$948,194</td><td class="nr">$284,151</td></tr>
           </tbody>
         </table>
         <div class="chart-wrap"><canvas id="dailyChart"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="card-title">每日付款狀態</div>
-        <table class="data-table" style="margin-bottom:0.7rem;">
-          <thead><tr><th>日期</th><th class="nr">已付</th><th class="nr">未付</th><th class="nr">付款率</th></tr></thead>
+        <table class="data-table">
+          <thead><tr><th>日期</th><th class="nr">訂單</th><th class="nr">已付</th><th class="nr">未付</th><th class="nr">付款率</th></tr></thead>
           <tbody>
-            <tr><td>05/06</td><td class="nr">177</td><td class="nr">128</td><td class="nr" style="color:var(--teal);font-weight:500;">58.0%</td></tr>
-            <tr><td>05/07</td><td class="nr">61</td><td class="nr">67</td><td class="nr" style="color:var(--gold);">47.7%</td></tr>
-            <tr><td>05/08</td><td class="nr">33</td><td class="nr">47</td><td class="nr" style="color:var(--accent);">41.3%</td></tr>
-            <tr><td>05/09</td><td class="nr">28</td><td class="nr">36</td><td class="nr" style="color:var(--accent);">43.8%</td></tr>
-            <tr class="tot"><td>合計</td><td class="nr">299</td><td class="nr">278</td><td class="nr">51.8%</td></tr>
+            <tr><td>05/06</td><td class="nr">306</td><td class="nr">292</td><td class="nr">14</td><td class="nr" style="color:var(--teal)">95.4%</td></tr>
+            <tr><td>05/07</td><td class="nr">128</td><td class="nr">119</td><td class="nr">8</td><td class="nr" style="color:var(--gold)">93.0%</td></tr>
+            <tr><td>05/08</td><td class="nr">79</td><td class="nr">76</td><td class="nr">3</td><td class="nr" style="color:var(--teal)">96.2%</td></tr>
+            <tr><td>05/09</td><td class="nr">64</td><td class="nr">60</td><td class="nr">4</td><td class="nr" style="color:var(--gold)">93.8%</td></tr>
+            <tr class="tot"><td>合計</td><td class="nr">577</td><td class="nr">547</td><td class="nr">29</td><td class="nr">94.8%</td></tr>
           </tbody>
         </table>
-        <div class="chart-wrap"><canvas id="payChart"></canvas></div>
-        <div style="display:flex;gap:12px;font-size:11px;color:var(--muted);margin-top:8px;justify-content:center;">
-          <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a7c6f;display:inline-block;"></span>已付款</span>
-          <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e8c5ae;display:inline-block;"></span>未付款</span>
+        <div style="margin-top:1rem;position:relative;height:120px"><canvas id="payChart"></canvas></div>
+        <div style="display:flex;gap:14px;font-size:11px;color:var(--muted);margin-top:8px;justify-content:center">
+          <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#2a7c6f;display:inline-block"></span>已付款</span>
+          <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#d66030;display:inline-block"></span>未付款</span>
         </div>
       </div>
     </div>
@@ -291,39 +163,12 @@ body {
   <div class="section">
     <div class="section-label">商品銷售排行（成立訂單）</div>
     <div class="chart-card">
-      <div class="card-title">各商品組數 &amp; 金額排行</div>
-      <div id="prodBars" style="margin-bottom:0.6rem;"></div>
-      <table class="data-table" style="margin-top:0.7rem;">
-        <thead><tr><th>商品名稱</th><th class="nr">組數</th><th class="nr">金額</th><th class="nr">佔比</th></tr></thead>
+      <div class="card-title">各商品銷售金額</div>
+      <div id="prodBars"></div>
+      <table class="data-table" style="margin-top:.8rem">
+        <thead><tr><th>商品名稱</th><th class="nr">訂單數</th><th class="nr">金額</th><th class="nr">佔比</th></tr></thead>
         <tbody id="prodTable"></tbody>
       </table>
-    </div>
-  </div>
-
-  <!-- 實際瓶數 -->
-  <div class="section">
-    <div class="section-label">實際出貨瓶數統計</div>
-    <div class="two-col">
-      <div class="bottle-block" data-label="爆白防護隔離噴霧 150ml">
-        <div class="bottle-count" style="color:var(--accent);">1,435 <span class="bottle-unit">瓶</span></div>
-        <div class="bottle-detail">
-          <div class="bottle-row"><span>爆白1入 × 31組</span><span class="eq">= 31 瓶</span></div>
-          <div class="bottle-row"><span>爆白2入 × 211組</span><span class="eq">= 422 瓶</span></div>
-          <div class="bottle-row"><span>爆白3入 × 99組</span><span class="eq">= 297 瓶</span></div>
-          <div class="bottle-row"><span>爆白5入 × 90組</span><span class="eq">= 450 瓶</span></div>
-          <div class="bottle-row"><span>爆白10入 × 11組</span><span class="eq">= 110 瓶</span></div>
-          <div class="bottle-row"><span>組合包 × 125組</span><span class="eq">= 125 瓶</span></div>
-        </div>
-      </div>
-      <div class="bottle-block" data-label="活氧B群保濕噴霧 100ml">
-        <div class="bottle-count" style="color:var(--teal);">298 <span class="bottle-unit">瓶</span></div>
-        <div class="bottle-detail">
-          <div class="bottle-row"><span>B群1入 × 23組</span><span class="eq">= 23 瓶</span></div>
-          <div class="bottle-row"><span>B群2入 × 45組</span><span class="eq">= 90 瓶</span></div>
-          <div class="bottle-row"><span>B群3入 × 20組</span><span class="eq">= 60 瓶</span></div>
-          <div class="bottle-row"><span>組合包 × 125組</span><span class="eq">= 125 瓶</span></div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -332,9 +177,9 @@ body {
     <div class="section-label">每日商品銷售明細</div>
     <div class="two-col">
       <div class="chart-card">
-        <div class="card-title">05/06（305 訂單）</div>
+        <div class="card-title">05/06（306 訂單）</div>
         <table class="data-table">
-          <thead><tr><th>商品</th><th class="nr">組數</th><th class="nr">金額</th></tr></thead>
+          <thead><tr><th>商品</th><th class="nr">筆數</th><th class="nr">金額</th></tr></thead>
           <tbody>
             <tr><td>爆白2入</td><td class="nr">114</td><td class="nr">$113,886</td></tr>
             <tr><td>爆白5入</td><td class="nr">51</td><td class="nr">$112,200</td></tr>
@@ -351,12 +196,12 @@ body {
       <div class="chart-card">
         <div class="card-title">05/07（128 訂單）</div>
         <table class="data-table">
-          <thead><tr><th>商品</th><th class="nr">組數</th><th class="nr">金額</th></tr></thead>
+          <thead><tr><th>商品</th><th class="nr">筆數</th><th class="nr">金額</th></tr></thead>
           <tbody>
-            <tr><td>爆白2入</td><td class="nr">31</td><td class="nr">$30,969</td></tr>
             <tr><td>爆白5入</td><td class="nr">23</td><td class="nr">$50,500</td></tr>
             <tr><td>組合包</td><td class="nr">32</td><td class="nr">$46,546</td></tr>
             <tr><td>爆白3入</td><td class="nr">23</td><td class="nr">$33,465</td></tr>
+            <tr><td>爆白2入</td><td class="nr">31</td><td class="nr">$30,969</td></tr>
             <tr><td>B群2入</td><td class="nr">16</td><td class="nr">$27,840</td></tr>
             <tr><td>B群3入</td><td class="nr">6</td><td class="nr">$15,300</td></tr>
             <tr><td>爆白10入</td><td class="nr">3</td><td class="nr">$12,600</td></tr>
@@ -366,18 +211,18 @@ body {
         </table>
       </div>
     </div>
-    <div class="two-col" style="margin-top:1rem;">
+    <div class="two-col" style="margin-top:1rem">
       <div class="chart-card">
-        <div class="card-title">05/08（80 訂單）</div>
+        <div class="card-title">05/08（79 訂單）</div>
         <table class="data-table">
-          <thead><tr><th>商品</th><th class="nr">組數</th><th class="nr">金額</th></tr></thead>
+          <thead><tr><th>商品</th><th class="nr">筆數</th><th class="nr">金額</th></tr></thead>
           <tbody>
-            <tr><td>爆白2入</td><td class="nr">40</td><td class="nr">$39,960</td></tr>
+            <tr><td>爆白2入</td><td class="nr">39</td><td class="nr">$38,961</td></tr>
             <tr><td>組合包</td><td class="nr">14</td><td class="nr">$19,066</td></tr>
             <tr><td>爆白5入</td><td class="nr">8</td><td class="nr">$17,600</td></tr>
             <tr><td>爆白3入</td><td class="nr">9</td><td class="nr">$13,095</td></tr>
-            <tr><td>爆白10入</td><td class="nr">2</td><td class="nr">$8,400</td></tr>
             <tr><td>B群2入</td><td class="nr">5</td><td class="nr">$8,700</td></tr>
+            <tr><td>爆白10入</td><td class="nr">2</td><td class="nr">$8,400</td></tr>
             <tr><td>B群3入</td><td class="nr">2</td><td class="nr">$5,100</td></tr>
             <tr><td>爆白1入</td><td class="nr">6</td><td class="nr">$3,120</td></tr>
             <tr><td>B群1入</td><td class="nr">1</td><td class="nr">$899</td></tr>
@@ -387,7 +232,7 @@ body {
       <div class="chart-card">
         <div class="card-title">05/09（64 訂單）</div>
         <table class="data-table">
-          <thead><tr><th>商品</th><th class="nr">組數</th><th class="nr">金額</th></tr></thead>
+          <thead><tr><th>商品</th><th class="nr">筆數</th><th class="nr">金額</th></tr></thead>
           <tbody>
             <tr><td>爆白2入</td><td class="nr">26</td><td class="nr">$25,974</td></tr>
             <tr><td>組合包</td><td class="nr">14</td><td class="nr">$20,535</td></tr>
@@ -404,100 +249,108 @@ body {
     </div>
   </div>
 
-  <!-- 洞察 -->
+  <!-- 瓶數 -->
+  <div class="section">
+    <div class="section-label">實際出貨瓶數統計（成立訂單）</div>
+    <div class="two-col">
+      <div class="bottle-block" data-label="爆白防護隔離噴霧 150ml">
+        <div class="bottle-count" style="color:var(--blue)">1,433 <span class="bottle-unit">瓶</span></div>
+        <div class="bottle-detail">
+          <div class="bottle-row"><span>爆白1入 ×31組</span><span class="eq">= 31 瓶</span></div>
+          <div class="bottle-row"><span>爆白2入 ×210組</span><span class="eq">= 420 瓶</span></div>
+          <div class="bottle-row"><span>爆白3入 ×99組</span><span class="eq">= 297 瓶</span></div>
+          <div class="bottle-row"><span>爆白5入 ×90組</span><span class="eq">= 450 瓶</span></div>
+          <div class="bottle-row"><span>爆白10入 ×11組</span><span class="eq">= 110 瓶</span></div>
+          <div class="bottle-row"><span>組合包 ×125組</span><span class="eq">= 125 瓶</span></div>
+        </div>
+      </div>
+      <div class="bottle-block" data-label="活氧B群保濕噴霧 100ml">
+        <div class="bottle-count" style="color:var(--teal)">298 <span class="bottle-unit">瓶</span></div>
+        <div class="bottle-detail">
+          <div class="bottle-row"><span>B群1入 ×23組</span><span class="eq">= 23 瓶</span></div>
+          <div class="bottle-row"><span>B群2入 ×45組</span><span class="eq">= 90 瓶</span></div>
+          <div class="bottle-row"><span>B群3入 ×20組</span><span class="eq">= 60 瓶</span></div>
+          <div class="bottle-row"><span>組合包 ×125組</span><span class="eq">= 125 瓶</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="insight-box">
     <h3>結案重點洞察</h3>
     <ul class="insight-list">
-      <li>首日（05/06）爆發力強，貢獻 305 筆訂單、$499,934 銷售額，佔總銷售額 52.8%，後三天呈自然遞減；下次可在首日加碼推播。</li>
-      <li>付款率整體 51.8%，首日最高達 58%，之後各日皆在 42–48% 間；未付款 278 筆，建議盡快催款以確認實際入帳分潤。</li>
-      <li>爆白系列絕對主力，爆白2入（211組）+ 爆白5入（90組）佔爆白銷售大宗；組合包 125 組穩定，是帶動B群銷量的主要來源。</li>
-      <li>B群獨立銷售偏弱（共 88 組），建議下次開團加強B群獨立入組的優惠力度，或擴大組合包吸引力。</li>
-      <li>出貨量：爆白 1,435 瓶 ／ B群 298 瓶，備貨及物流可參考此比例（約 5:1）做未來預估。</li>
+      <li>成立 577 筆、總銷售額 $948,194，付款率 94.8%，未付款 29 筆（$41,017）建議持續追蹤。</li>
+      <li>首日（05/06）爆發 306 筆、銷售 $503,033，佔整體 53%，後三天自然遞減；首日效應顯著，下次開團建議首日加碼推播。</li>
+      <li>取消訂單 23 筆中 22 筆為備貨中取消，顯示部分顧客下單後反悔，可考慮加強開團說明減少取消率。</li>
+      <li>爆白2入（210筆/$209,790）和爆白5入（90筆/$197,900）合計貢獻 43.1%，是本次最強主力商品。</li>
+      <li>組合包 125 筆（$182,607）穩定排第三，帶動 B群同步銷售；B群獨立銷售佔比 15.9%，仍有成長空間。</li>
+      <li>出貨比例爆白：B群 = 1,433：298 ≈ 5:1，下次備貨可依此比例預估。</li>
     </ul>
   </div>
 
 </div>
 
 <div class="footer">
-  <span>Yboutique團購活動｜05/06–05/09</span>
-  <span>HEIWEI分潤活動報告 · 產生日期 2026/05/11</span>
+  <span>HEIWEI · Yboutique 05/04–05/10 活動結案</span>
+  <span>結案報告 · 產生日期 2026/05/28</span>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const prods = [
-  {n:'爆白2入', q:211, a:210789},
-  {n:'爆白5入', q:90,  a:197900},
-  {n:'組合包',  q:125, a:182607},
-  {n:'爆白3入', q:99,  a:144045},
-  {n:'B群2入',  q:45,  a:78300},
-  {n:'B群3入',  q:20,  a:51000},
-  {n:'爆白10入',q:11,  a:46200},
-  {n:'B群1入',  q:23,  a:20677},
-  {n:'爆白1入', q:31,  a:16120},
+const prods=[
+  {n:'爆白2入',ord:210,a:209790,c:'#3266ad'},
+  {n:'爆白5入',ord:90, a:197900,c:'#3266ad'},
+  {n:'組合包', ord:125,a:182607,c:'#3266ad'},
+  {n:'爆白3入',ord:99, a:144045,c:'#3266ad'},
+  {n:'B群2入', ord:45, a:78300, c:'#2a7c6f'},
+  {n:'B群3入', ord:20, a:51000, c:'#2a7c6f'},
+  {n:'爆白10入',ord:11,a:46200, c:'#3266ad'},
+  {n:'B群1入', ord:23, a:20677, c:'#2a7c6f'},
+  {n:'爆白1入',ord:31, a:16120, c:'#3266ad'},
 ];
-const totalAmt = prods.reduce((s,p)=>s+p.a, 0);
-
-const barsEl = document.getElementById('prodBars');
-prods.forEach(p => {
-  const pct = (p.a/totalAmt*100).toFixed(1);
-  const color = p.n.includes('B群') ? '#2a7c6f' : '#c94f2a';
-  barsEl.innerHTML += `
-    <div class="bar-row">
-      <div class="bar-label">${p.n}</div>
-      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color}"></div></div>
-      <div class="bar-num">$${(p.a/1000).toFixed(0)}k (${pct}%)</div>
-    </div>`;
+const total=prods.reduce((s,p)=>s+p.a,0);
+const barsEl=document.getElementById('prodBars');
+prods.forEach(p=>{
+  const pct=(p.a/total*100).toFixed(1);
+  barsEl.innerHTML+=`<div class="bar-row"><div class="bar-label">${p.n}</div><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${p.c}"></div></div><div class="bar-num">$${(p.a/1000).toFixed(0)}k (${pct}%)</div></div>`;
 });
-
-const prodTbl = document.getElementById('prodTable');
-prods.forEach(p => {
-  const pct = (p.a/totalAmt*100).toFixed(1);
-  const tr = document.createElement('tr');
-  tr.innerHTML = `<td>${p.n}</td><td class="nr">${p.q}</td><td class="nr">$${p.a.toLocaleString()}</td><td class="nr">${pct}%</td>`;
+const prodTbl=document.getElementById('prodTable');
+prods.forEach(p=>{
+  const pct=(p.a/total*100).toFixed(1);
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${p.n}</td><td class="nr">${p.ord}</td><td class="nr">$${p.a.toLocaleString()}</td><td class="nr">${pct}%</td>`;
   prodTbl.appendChild(tr);
 });
-const totTr = document.createElement('tr');
-totTr.className = 'tot';
-totTr.innerHTML = `<td>合計</td><td class="nr">655</td><td class="nr">$${totalAmt.toLocaleString()}</td><td class="nr">100%</td>`;
+const totTr=document.createElement('tr');
+totTr.className='tot';
+totTr.innerHTML=`<td>合計</td><td class="nr">577</td><td class="nr">$${total.toLocaleString()}</td><td class="nr">100%</td>`;
 prodTbl.appendChild(totTr);
 
-new Chart(document.getElementById('dailyChart'), {
-  type: 'bar',
-  data: {
-    labels: ['05/06','05/07','05/08','05/09'],
-    datasets: [
-      { label:'銷售額', data:[499934,227963,116230,101967], backgroundColor:['#c94f2a','#d4764f','#dfa07a','#e8c5ae'], borderRadius:3, borderSkipped:false, yAxisID:'y1' },
-      { label:'訂單數', data:[305,128,80,64], type:'line', borderColor:'#2a7c6f', backgroundColor:'transparent', pointBackgroundColor:'#2a7c6f', pointRadius:4, tension:0.3, yAxisID:'y2' }
-    ]
-  },
-  options: {
-    responsive:true, maintainAspectRatio:false,
-    plugins:{ legend:{ display:false } },
+new Chart(document.getElementById('dailyChart'),{
+  type:'bar',
+  data:{labels:['05/06','05/07','05/08','05/09'],datasets:[
+    {label:'銷售額',data:[503033,227963,115231,101967],backgroundColor:['#3266ad','#5b8dd9','#8fb4e6','#bcd4f0'],borderRadius:3,borderSkipped:false,yAxisID:'y1'},
+    {label:'訂單數',data:[306,128,79,64],type:'line',borderColor:'#2a7c6f',backgroundColor:'transparent',pointBackgroundColor:'#2a7c6f',pointRadius:4,tension:.3,yAxisID:'y2'}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true,labels:{font:{size:10},boxWidth:10,padding:10}}},
     scales:{
-      y1:{ beginAtZero:true, ticks:{ font:{size:10}, callback: v=>'$'+(v/1000).toFixed(0)+'k' } },
-      y2:{ beginAtZero:true, position:'right', ticks:{font:{size:10}}, grid:{display:false} },
-      x:{ ticks:{font:{size:11}} }
+      y1:{beginAtZero:true,ticks:{font:{size:10},callback:v=>'$'+(v/1000).toFixed(0)+'k'}},
+      y2:{beginAtZero:true,position:'right',ticks:{font:{size:10}},grid:{display:false}},
+      x:{ticks:{font:{size:11}}}
     }
   }
 });
 
-new Chart(document.getElementById('payChart'), {
+new Chart(document.getElementById('payChart'),{
   type:'bar',
-  data:{
-    labels:['05/06','05/07','05/08','05/09'],
-    datasets:[
-      { label:'已付款', data:[177,61,33,28], backgroundColor:'#2a7c6f', borderRadius:3, borderSkipped:false, stack:'a' },
-      { label:'未付款', data:[128,67,47,36], backgroundColor:'#e8c5ae', borderRadius:0, borderSkipped:false, stack:'a' }
-    ]
-  },
-  options:{
-    responsive:true, maintainAspectRatio:false,
-    plugins:{ legend:{ display:false } },
-    scales:{
-      x:{ stacked:true, ticks:{font:{size:11}} },
-      y:{ stacked:true, ticks:{font:{size:10}} }
-    }
+  data:{labels:['05/06','05/07','05/08','05/09'],datasets:[
+    {label:'已付款',data:[292,119,76,60],backgroundColor:'#2a7c6f',borderRadius:3,borderSkipped:false,stack:'a'},
+    {label:'未付款',data:[14,8,3,4],backgroundColor:'#d66030',borderRadius:0,borderSkipped:false,stack:'a'}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,ticks:{font:{size:10}}}}
   }
 });
 </script>
